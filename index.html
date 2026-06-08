@@ -4,6 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aerobot Technologies — UiA</title>
+  <meta name="description" content="Aerobot Technologies is UiA's student organization for drone building and autonomous aerial technology, based in Grimstad, Norway." />
+  <meta name="keywords" content="Aerobot Technologies, drone, UiA, Grimstad, student organization, autonomous, Norway" />
+  <meta property="og:title" content="Aerobot Technologies" />
+  <meta property="og:description" content="Building the future of drones — UiA's student organization for drone building and autonomous aerial technology." />
+  <meta property="og:url" content="https://aerobottechnologies.no" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -256,11 +261,14 @@
       .nav-links a { font-size: 1.2rem; }
       .hamburger {
         display: flex; flex-direction: column; gap: 5px;
-        cursor: pointer; z-index: 101; background: none; border: none; padding: 4px;
+        cursor: pointer; z-index: 101;
+        background: var(--accent-dark); border: none;
+        padding: 10px 12px; border-radius: 4px;
+        margin-left: auto;
       }
       .hamburger span {
         display: block; width: 24px; height: 2px;
-        background: var(--text); border-radius: 2px;
+        background: #fff; border-radius: 2px;
         transition: transform 0.3s, opacity 0.3s;
       }
       .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
