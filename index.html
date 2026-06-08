@@ -21,7 +21,7 @@
       --muted: #7a9aaf;
     }
 
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
 
     body {
       background: var(--bg);
@@ -29,6 +29,7 @@
       font-family: 'DM Sans', sans-serif;
       font-size: 16px;
       line-height: 1.6;
+      overflow-x: hidden;
     }
 
     /* ── NAV ── */
@@ -243,7 +244,7 @@
 
     @media (max-width: 900px) {
       nav { padding: 1rem 1.5rem; }
-      .nav-logo img { height: 50px; }
+      .nav-logo img { height: 70px; }
       .nav-links {
         display: none;
         position: fixed; top: 0; left: 0; right: 0; bottom: 0;
