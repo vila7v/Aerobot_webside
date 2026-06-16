@@ -85,13 +85,14 @@
       transition: background 0.3s ease-out;
     }
     .hero-grid {
-      position: absolute; inset: 0;
+      position: absolute; top: -10%; left: 0; right: 0; height: 120%;
       background-image:
         linear-gradient(rgba(168,197,218,0.04) 1px, transparent 1px),
         linear-gradient(90deg, rgba(168,197,218,0.04) 1px, transparent 1px);
       background-size: 60px 60px;
+      will-change: transform;
     }
-    .hero-content { position: relative; z-index: 1; max-width: 900px; }
+    .hero-content { position: relative; z-index: 1; max-width: 900px; will-change: transform, opacity; }
     .hero-tag {
       display: inline-block;
       font-size: 0.75rem; font-weight: 600;
@@ -632,6 +633,20 @@
   </style>
 
   <script>
+    // Parallax effect on scroll
+    const heroGrid = document.querySelector('.hero-grid');
+    const heroContent = document.querySelector('.hero-content');
+    window.addEventListener('scroll', () => {
+      const scrolled = window.scrollY;
+      if (heroGrid) {
+        heroGrid.style.transform = `translateY(${scrolled * 0.35}px)`;
+      }
+      if (heroContent) {
+        heroContent.style.transform = `translateY(${scrolled * -0.15}px)`;
+        heroContent.style.opacity = Math.max(1 - scrolled / 600, 0);
+      }
+    });
+
     // Hero mouse-follow glow
     const heroBg = document.querySelector('.hero-bg');
     const heroEl = document.querySelector('.hero');
